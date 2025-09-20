@@ -1,0 +1,462 @@
+<!--
+  Whid Golden Future - Multi-Business Landing Page
+  Single-file HTML5 + CSS3 + minimal JS
+  Uses only free/open-source libraries: Bootstrap 5, Font Awesome (free), Google Fonts, Unsplash images
+  Ready to deploy on Netlify / GitHub Pages / any static host
+
+  Instructions:
+  - Replace placeholder images and phone numbers with real assets.
+  - For Netlify forms, data-netlify="true" is included on the contact form. For GitHub Pages, use a serverless form provider or update the form action.
+  - Compress images before production (Squoosh / TinyPNG) and consider local copies.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whid Golden Future — Building Tomorrow, Today</title>
+  <meta name="description" content="Whid Golden Future: Land, Agro & Fish, Manpower Processing, Media Production, and Private Language Training in Bangladesh.">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome (free) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --gold: #D4AF37; /* Primary */
+      --navy: #0F2C59; /* Secondary */
+      --forest: #228B22; /* Accent */
+      --muted: #F5F5F5;
+      --max-width: 1100px;
+      --radius: .75rem;
+    }
+    html,body{height:100%;font-family:'Open Sans',system-ui,-apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+    body{color:#222;background:#fff;}
+    /* Header */
+    .navbar{background:linear-gradient(90deg, rgba(13,27,63,1) 0%, rgba(13,27,63,0.95) 100%);}
+    .navbar-brand{font-family:'Poppins',sans-serif;font-weight:700;color:var(--gold)!important}
+    .nav-link{color:#fff!important}
+    .nav-link:hover{color:var(--gold)!important}
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(15,44,89,0.85), rgba(15,44,89,0.5)), url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=') center/cover no-repeat; color:#fff; padding:6rem 0;}
+    .hero h1{font-family:'Poppins',sans-serif;font-size:2rem}
+    @media(min-width:768px){ .hero h1{font-size:2.6rem} }
+    .cta-buttons .btn{margin: .35rem}
+    /* Service cards */
+    .service-card{border-radius:var(--radius);background:#fff;box-shadow:0 6px 18px rgba(15,44,89,0.06);transition:transform .25s ease, box-shadow .25s ease}
+    .service-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,44,89,0.12)}
+    .icon-circle{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+    .gold{color:var(--gold)}
+    .fa-stack {vertical-align: top}
+    /* Section spacing */
+    section{padding:3.2rem 0}
+    .cards-row{gap:1.25rem}
+    /* Testimonials */
+    .testimonial{background:linear-gradient(90deg, #fff, #fbfbfb);border-radius:1rem;padding:1.25rem}
+    /* Footer */
+    footer{background:#0b2140;color:#fff;padding:2rem 0}
+    a.btn-cta{background:var(--gold);color:#0b2140;font-weight:700}
+    /* Accessibility focus */
+    :focus{outline:3px solid rgba(212,175,55,0.25);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand" href="#">Whid Golden Future</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#services">আমাদের সেবাসমূহ / Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">আমাদের সম্পর্কে / About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#testimonials">প্রশংসাপত্র / Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">যোগাযোগ / Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home" aria-labelledby="hero-heading">
+    <div class="container text-center text-md-start">
+      <div class="row align-items-center">
+        <div class="col-md-7 text-white">
+          <h1 id="hero-heading">Whid Golden Future — Building Tomorrow, Today.</h1>
+          <p class="lead">Your Trusted Partner in Land, Agro, Manpower, Media & Language Training.</p>
+
+          <!-- CTAs to each section -->
+          <div class="cta-buttons d-flex flex-wrap mt-3">
+            <a class="btn btn-light btn-lg" href="#land">🏡 Land</a>
+            <a class="btn btn-light btn-lg" href="#agro">🐟 Agro & Fish</a>
+            <a class="btn btn-light btn-lg" href="#manpower">👷 Manpower</a>
+            <a class="btn btn-light btn-lg" href="#media">🎥 Media</a>
+            <a class="btn btn-light btn-lg" href="#training">📚 Language</a>
+            <a class="btn btn-outline-light btn-lg" href="#contact">Contact Us</a>
+          </div>
+
+          <div class="mt-4">
+            <a class="btn btn-cta btn-lg me-2" href="#contact">Inquire Now</a>
+            <a class="btn btn-outline-light btn-lg" href="#about">About Us</a>
+          </div>
+        </div>
+        <div class="col-md-5 d-none d-md-block">
+          <!-- Illustrative image - lazy loaded with alt text -->
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Bangladesh landscape and business collage" loading="lazy" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container" aria-labelledby="services-heading">
+    <div class="text-center mb-4">
+      <h2 id="services-heading" class="fw-bold">আমাদের সেবাসমূহ / Our Services</h2>
+      <p class="text-muted">One-stop solutions across multiple sectors — trustworthy, transparent and locally-rooted.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 cards-row">
+      <!-- Land -->
+      <div class="col">
+        <article class="p-4 service-card h-100" id="land" aria-labelledby="land-title">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-circle bg-light gold"><i class="fa-solid fa-house"></i></div>
+            <div>
+              <h3 id="land-title">Land Purchase &amp; Sales 🏡📍📜</h3>
+              <p>Secure prime land investments with legal assurance and transparent pricing. Title search, documentation and negotiation support.</p>
+              <a href="#contact" class="stretched-link" aria-label="Inquire about land services">Inquire Now →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Agro & Fish -->
+      <div class="col">
+        <article class="p-4 service-card h-100" id="agro" aria-labelledby="agro-title">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-circle bg-light gold"><i class="fa-solid fa-fish"></i></div>
+            <div>
+              <h3 id="agro-title">Agro &amp; Fish Business 🐟🌾🚜</h3>
+              <p>Sustainable farming & aquaculture solutions for local consumption and export markets. Supply chain and buyer connections available.</p>
+              <a href="#contact" class="stretched-link" aria-label="Inquire about agro and fish services">Connect with Us →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Manpower -->
+      <div class="col">
+        <article class="p-4 service-card h-100" id="manpower" aria-labelledby="manpower-title">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-circle bg-light gold"><i class="fa-solid fa-user-tie"></i></div>
+            <div>
+              <h3 id="manpower-title">Manpower Processing 👷🌍✈️</h3>
+              <p>End-to-end recruitment, documentation, visa support and placement for overseas employment. Trusted partner for jobseekers and employers.</p>
+              <a href="#contact" class="stretched-link" aria-label="Inquire about manpower processing">Get Assistance →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Media -->
+      <div class="col">
+        <article class="p-4 service-card h-100" id="media" aria-labelledby="media-title">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-circle bg-light gold"><i class="fa-solid fa-video"></i></div>
+            <div>
+              <h3 id="media-title">Media Business 🎥📸📱</h3>
+              <p>Professional video, photography, and digital content production for brands, events and social media campaigns.</p>
+              <a href="#contact" class="stretched-link" aria-label="Inquire about media services">Book a Project →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Language Training -->
+      <div class="col">
+        <article class="p-4 service-card h-100" id="training" aria-labelledby="training-title">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-circle bg-light gold"><i class="fa-solid fa-language"></i></div>
+            <div>
+              <h3 id="training-title">Private Language Training 🇫🇷🇪🇸🇩🇪🇮🇳🇸🇦🇬🇧</h3>
+              <p>Master French, Spanish, German, Hindi, Arabic & English with certified private tutors. Courses from Beginner to Advanced — flexible schedules.</p>
+              <a href="#contact" class="stretched-link" aria-label="Inquire about language training">Book a Free Consultation →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Brochure / Download -->
+      <div class="col">
+        <article class="p-4 service-card h-100 text-center d-flex flex-column justify-content-center">
+          <i class="fa-solid fa-file-arrow-down fa-2x gold mb-3"></i>
+          <h4>Download Brochure</h4>
+          <p class="text-muted">Get a concise PDF with our services and contact details.</p>
+          <a class="btn btn-outline-primary mt-2" href="#" role="button" aria-label="Download brochure (replace link)">Download (Placeholder)</a>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>আমাদের সম্পর্কে / About Us</h2>
+          <p class="lead">Mission: Empowering communities through ethical business and skill development.</p>
+          <p>Vision: To be Bangladesh’s most trusted multi-sectoral service provider by 2030. We focus on transparency, compliance and long-term partnerships.</p>
+
+          <ul class="list-unstyled">
+            <li><i class="fa-solid fa-check-circle text-success me-2"></i>Legal & compliant operations</li>
+            <li><i class="fa-solid fa-check-circle text-success me-2"></i>Local knowledge, international reach</li>
+            <li><i class="fa-solid fa-check-circle text-success me-2"></i>Client-first, results-driven</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <!-- Team / stock images -->
+          <div class="row g-2">
+            <div class="col-6"><img loading="lazy" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Team member" class="img-fluid rounded shadow"></div>
+            <div class="col-6"><img loading="lazy" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Team at work" class="img-fluid rounded shadow"></div>
+            <div class="col-6"><img loading="lazy" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Office" class="img-fluid rounded shadow mt-2"></div>
+            <div class="col-6"><img loading="lazy" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Meeting" class="img-fluid rounded shadow mt-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="container">
+    <div class="text-center mb-4">
+      <h2>প্রশংসাপত্র / Testimonials</h2>
+      <p class="text-muted">What our clients say — realistic sample testimonials for layout purposes.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <!-- Each testimonial uses a photo, name, role, text and star rating -->
+      <div class="col">
+        <div class="testimonial d-flex gap-3 align-items-start">
+          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=120&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Client photo" class="rounded-circle" width="64" height="64">
+          <div>
+            <h5 class="mb-0">Md. Rahim</h5>
+            <small class="text-muted">Investor — Land Purchase</small>
+            <p class="mt-2 mb-1">"Transparent process and excellent legal support — bought my farmland smoothly."</p>
+            <div class="text-warning">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="testimonial d-flex gap-3 align-items-start">
+          <img src="https://images.unsplash.com/photo-1545996124-1a2ab3f5b3e2?q=80&w=120&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Client photo" class="rounded-circle" width="64" height="64">
+          <div>
+            <h5 class="mb-0">Sabrina Noor</h5>
+            <small class="text-muted">Exporter — Agro & Fish</small>
+            <p class="mt-2 mb-1">"Efficient supply chain coordination and reliable quality control."</p>
+            <div class="text-warning">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="testimonial d-flex gap-3 align-items-start">
+          <img src="https://images.unsplash.com/photo-1544005311-8d3c72d2b0b0?q=80&w=120&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Client photo" class="rounded-circle" width="64" height="64">
+          <div>
+            <h5 class="mb-0">Arman Hossain</h5>
+            <small class="text-muted">Student — Language Training</small>
+            <p class="mt-2 mb-1">"My German improved rapidly thanks to targeted private lessons."</p>
+            <div class="text-warning">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="testimonial d-flex gap-3 align-items-start">
+          <img src="https://images.unsplash.com/photo-1545996104-5b7d1f9d5b2d?q=80&w=120&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="Client photo" class="rounded-circle" width="64" height="64">
+          <div>
+            <h5 class="mb-0">Rumana S.</h5>
+            <small class="text-muted">Brand — Media Production</small>
+            <p class="mt-2 mb-1">"Professional video team and fast turnaround. Highly recommended."</p>
+            <div class="text-warning">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>যোগাযোগ / Contact Us</h2>
+          <p class="text-muted">Office: Dhaka, Bangladesh</p>
+
+          <!-- Google Maps Embed (replace location if needed) -->
+          <div class="ratio ratio-16x9 mb-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902628295233!2d90.40315591538184!3d23.77717639468936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8a4c6f7e3d5%3A0xb6f3f3d9b2f8b3e7!2sDhanmondi%2C%20Dhaka%201205!5e0!3m2!1sen!2sbd!4v1691234567890" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <p><strong>Office:</strong> House #, Road #, Dhanmondi, Dhaka, Bangladesh</p>
+          <p><strong>Phone:</strong> <a href="tel:+8801XXXXXXXXX">+8801XXXXXXXXX</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@whidgoldenfuture.com">info@whidgoldenfuture.com</a></p>
+
+          <p>
+            <a class="btn btn-outline-dark me-2" href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-outline-dark" href="tel:+8801XXXXXXXXX">Call Us</a>
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <!-- Contact form (Netlify-ready) -->
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="p-4 bg-white rounded shadow" aria-label="Contact form">
+            <input type="hidden" name="form-name" value="contact">
+            <div class="mb-3 visually-hidden">
+              <label>Don't fill this out if you're human: <input name="bot-field"></label>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input id="name" name="name" type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input id="email" name="email" type="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="service" class="form-label">Service Interest</label>
+              <select id="service" name="service" class="form-select" required>
+                <option value="">Select a service...</option>
+                <option>Land Purchase & Sales</option>
+                <option>Agro & Fish Business</option>
+                <option>Manpower Processing</option>
+                <option>Media Production</option>
+                <option>Private Language Training</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-cta">Send Message</button>
+              <a class="btn btn-outline-secondary" href="mailto:info@whidgoldenfuture.com">Email Directly</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Language Tutors Preview -->
+  <section class="container">
+    <div class="text-center mb-4">
+      <h2>Private Tutors — Course Levels</h2>
+      <p class="text-muted">Beginner → Intermediate → Advanced. Flexible schedules & certified instructors.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Tutor card (stock photos) repeatable -->
+      <div class="col">
+        <div class="card h-100">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=" class="card-img-top" alt="Tutor photo">
+          <div class="card-body">
+            <h5 class="card-title mb-1">Ms. Ayesha Khan</h5>
+            <p class="card-subtitle text-muted mb-2">French & English — Certified Instructor</p>
+            <p class="small">Private lessons, exam prep (DELF, TOEFL), conversation classes.</p>
+            <a href="#contact" class="stretched-link">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=" class="card-img-top" alt="Tutor photo 2">
+          <div class="card-body">
+            <h5 class="card-title mb-1">Mr. Rajiv Das</h5>
+            <p class="card-subtitle text-muted mb-2">Hindi & English — Professional Trainer</p>
+            <p class="small">Conversational Hindi, workplace language, translation help.</p>
+            <a href="#contact" class="stretched-link">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=" class="card-img-top" alt="Tutor photo 3">
+          <div class="card-body">
+            <h5 class="card-title mb-1">Ms. Lina Müller</h5>
+            <p class="card-subtitle text-muted mb-2">German & Spanish — Native/Expert</p>
+            <p class="small">Grammar-focused lessons, exam prep, cultural sessions.</p>
+            <a href="#contact" class="stretched-link">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h5 class="text-white">Whid Golden Future</h5>
+          <p class="small text-muted">© <span id="year"></span> Whid Golden Future. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="text-white me-3" href="#" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+          <a class="text-white me-3" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a class="text-white" href="#" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Insert current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll for internal anchors (prefers native behavior when supported)
+    (function(){
+      const links = document.querySelectorAll('a[href^="#"]');
+      for(const link of links){
+        link.addEventListener('click', function(e){
+          const targetId = this.getAttribute('href').slice(1);
+          if(!targetId) return;
+          const targetEl = document.getElementById(targetId);
+          if(targetEl){
+            e.preventDefault();
+            targetEl.scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        });
+      }
+    })();
+
+    // Basic form validation: Bootstrap styles + HTML5
+    (function(){
+      'use strict'
+      const forms = document.querySelectorAll('form')
+      Array.from(forms).forEach(form=>{
+        form.addEventListener('submit', function(event){
+          if(!form.checkValidity()){
+            event.preventDefault()
+            event.stopPropagation()
+            form.classList.add('was-validated')
+          }
+        }, false)
+      })
+    })();
+  </script>
+</body>
+</html>
